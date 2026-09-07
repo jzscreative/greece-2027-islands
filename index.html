@@ -1,4 +1,7 @@
-<title>Greece 2027 · v3 · 260906 1851</title>
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greece 2027 · v4 · 260907 0922</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="description" content="Athens, a second island, Rhodes. The family trip plan, one long scroll.">
@@ -81,11 +84,57 @@ details{margin-top:22px} summary{cursor:pointer;font-weight:600;color:var(--acc)
 }
 .draft .v{font-weight:500;color:inherit;background:transparent;border:1px solid currentColor;border-radius:999px;padding:2px 9px;margin-right:5px;letter-spacing:.08em;white-space:nowrap;opacity:.95}
 nav.side .brand .ver{display:block;font-family:var(--f-m);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:none;margin-top:5px}
+
+/* --- v4 mobile hardening (CSS-only, non-content) --- */
+html,body{max-width:100%;overflow-x:hidden}
+body{overflow-wrap:break-word;word-wrap:break-word}
+img,svg,video{max-width:100%;height:auto}
+.hero img,.isl-hero img,.card img{height:auto}
+/* Preserve prior hero aspect targets */
+.hero img{height:min(56vh,520px)}
+.isl-hero img{height:340px}
+.card .ph{aspect-ratio:3/2}
+.card .ph img{height:100%}
+@media (max-width:640px){
+  body{font-size:16px}
+  main{padding:0 14px 56px}
+  section{padding-top:44px}
+  h3{font-size:26px}
+  h4{font-size:17px}
+  .lede{font-size:17px}
+  .hero{margin-top:16px}
+  .hero img{height:38vh;min-height:220px}
+  .hero .over{padding:24px 18px 18px}
+  .hero .over p{font-size:16px}
+  .isl-hero img{height:200px}
+  .isl-title{padding:24px 16px 14px}
+  .isl-title h3{font-size:26px}
+  .isl-title .tag{font-size:16px}
+  .legs{margin-top:20px}
+  .leg b{font-size:20px}
+  .aside,.fit{padding:14px 16px}
+  .pick{padding:12px 12px}
+  .pick button{font-size:13px;padding:5px 11px}
+  .grid{grid-template-columns:1fr;gap:18px}
+  .open{grid-template-columns:1fr;gap:14px}
+  .open div{padding:14px 16px}
+  nav.side{padding:8px 12px}
+  nav.side a{padding:5px 10px;font-size:13px}
+  .cr{max-width:85%;font-size:9px}
+  #map .lbl{font-size:18px}
+  #map .lbl.small{font-size:15px}
+  #map .badge{font-size:14px}
+}
+@media (max-width:400px){
+  main{padding:0 12px 48px}
+  h1{font-size:clamp(36px,10vw,52px)}
+  h2{font-size:clamp(24px,7vw,32px)}
+}
 </style>
-<div class="draft"><span class="v" id="v-badge">v3</span> <span id="v-stamp">edited 6 Sep 2026 · 18:51 ET</span> · Draft, produced unattended · not independently verified · private, not for circulation</div>
+<div class="draft"><span class="v" id="v-badge">v4</span> <span id="v-stamp">edited 7 Sep 2026 · 09:22 ET</span> · Draft, produced unattended · not independently verified · private, not for circulation</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
-  <p class="brand">Greece 2027<small>Athens · an island · Rhodes</small><span class="ver" id="v-nav">v3 · 260906 1851 ET</span></p>
+  <p class="brand">Greece 2027<small>Athens · an island · Rhodes</small><span class="ver" id="v-nav">v4 · 260907 0922 ET</span></p>
   <a href="#overview">Overview</a>
   <a href="#athens" class="nights">Athens <span class="n">3 nights</span></a>
   <a href="#island" class="nights">Second island <span class="n">5 nights</span></a>
