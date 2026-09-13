@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Greece 2027 island pair shortlist - trip criteria, the girls lens, contrast, crossings and lodging.">
-<title>Greece 2027 · Island Pairs · 260910 2008</title>
+<title>Greece 2027 · Island Pairs · 260913 1535</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sofia+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root{
@@ -90,21 +90,22 @@ button.tog[aria-pressed="true"]{background:var(--accent);border-color:var(--acce
 button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .tally{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
 .pair{background:var(--surface);border:1px solid var(--line);border-radius:4px;
   box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
 .pair.flag{border-color:var(--warn)}
 .pair.cand{border-style:dashed}
 .pair[data-verdict="in"]{border-color:var(--ok);border-width:2px}
 .pair[data-verdict="out"]{opacity:.6}
-.phead{display:flex;align-items:center;gap:8px;padding:11px 16px 0}
+.phead{display:flex;align-items:center;gap:8px;padding:12px 18px 0}
 .pid{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;color:var(--ink-3);letter-spacing:.06em}
 .myrank{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
   color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:3px}
 
-.stops{display:flex;flex-direction:column;padding:4px 16px 14px;gap:0}
-.stopfull{padding:10px 0;border-top:1px dashed var(--line)}
-.stopfull:first-child{border-top:0;padding-top:2px}
+.stops{display:flex;flex-direction:row;padding:6px 18px 14px;gap:24px;align-items:flex-start}
+.stopfull{flex:1;min-width:0;padding:4px 0 0;position:relative}
+.stopfull:last-child::before{content:"";position:absolute;left:-12px;top:2px;bottom:2px;
+  border-left:1px dashed var(--line)}
 .stophead{display:flex;align-items:baseline;gap:10px}
 .stop{flex:1;min-width:0}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:8px 0 2px}
@@ -135,7 +136,7 @@ a.mini{font-size:11px;text-decoration:none;color:var(--accent);border:1px solid 
 a.mini:hover{border-color:var(--accent);background:var(--accent-soft)}
 
 .link{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
-  padding:9px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:9px 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   font-size:13.5px;background:var(--surface-2)}
 .link .dot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;align-self:center}
 .link .txt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -146,7 +147,7 @@ a.mini:hover{border-color:var(--accent);background:var(--accent-soft)}
 .lk-fail .dot{background:var(--crit)} .lk-fail .verdict{color:var(--crit)}
 .lk-unk .dot{background:var(--ink-3)} .lk-unk .verdict{color:var(--ink-3)}
 
-.meters{padding:13px 16px 4px;display:flex;flex-direction:column;gap:9px}
+.meters{padding:14px 18px 4px;display:flex;flex-direction:column;gap:9px}
 .m{display:grid;grid-template-columns:52px 1fr 46px;align-items:center;gap:10px}
 .m .mlbl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--ink-3)}
 .m .track{height:6px;background:var(--surface-3);border-radius:999px;overflow:hidden}
@@ -157,7 +158,7 @@ a.mini:hover{border-color:var(--accent);background:var(--accent-soft)}
 .m.hi .val{color:var(--accent);font-weight:600}
 .m .val small{font-size:10.5px;color:var(--ink-3)}
 
-.lodge{padding:10px 16px 2px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lodge{padding:11px 18px 2px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .llab{font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;color:var(--ink-3);
   width:52px;flex:0 0 52px}
 .lch{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;
@@ -167,13 +168,17 @@ a.mini:hover{border-color:var(--accent);background:var(--accent-soft)}
 .lch-warn{border-color:var(--warn);color:var(--warn);background:var(--warn-soft)} .lch-warn i{background:var(--warn)}
 .lch-gap i{background:var(--ink-3)}
 
-.note{padding:11px 16px 14px;font-size:13.5px;color:var(--ink-2);line-height:1.45}
+.note{padding:11px 18px 16px;font-size:13.5px;color:var(--ink-2);line-height:1.45}
 .note b{color:var(--ink);font-weight:600}
 .note .warnmark{color:var(--warn);font-weight:700}
 
 /* my take */
-.take{margin-top:auto;border-top:1px solid var(--line);background:var(--surface-2);padding:12px 16px 14px;
+.lower{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:stretch}
+.lcol{display:flex;flex-direction:column;padding-bottom:4px}
+.rcol{border-left:1px solid var(--line);display:flex}
+.take{flex:1;background:var(--surface-2);padding:12px 18px 14px;
   display:flex;flex-direction:column;gap:10px}
+.note{margin-top:auto}
 .takehead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .takehead .t{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink-3)}
 .stars{display:flex;gap:2px;margin-left:auto}
@@ -232,8 +237,16 @@ ul.plain b{color:var(--ink);font-weight:600}
 .foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
   font-size:12.5px;color:var(--ink-3);max-width:72ch}
 hr.rule{border:0;border-top:1px solid var(--line);margin:44px 0 0}
+@media (max-width:860px){
+  .stops{flex-direction:column;gap:0}
+  .stopfull{padding:10px 0;border-top:1px dashed var(--line)}
+  .stopfull:first-child{border-top:0;padding-top:2px}
+  .stopfull:last-child::before{display:none}
+  .lower{grid-template-columns:1fr}
+  .rcol{border-left:0;border-top:1px solid var(--line)}
+}
 @media (max-width:520px){
-  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)!important}
   .arrow{display:none}
   .m{grid-template-columns:48px 1fr 44px}
   .stars{margin-left:0}
@@ -246,7 +259,7 @@ hr.rule{border:0;border-top:1px solid var(--line);margin:44px 0 0}
 <body>
 <div class="wrap">
 
-<p class="eyebrow"><span class="ver">v5-web &middot; 260910 2008 ET</span><span>Greece 2027</span><span>research mode</span><span>13 pairs of 63 scored</span></p>
+<p class="eyebrow"><span class="ver">v5-web &middot; 260913 1535 ET</span><span>Greece 2027</span><span>research mode</span><span>13 pairs of 63 scored</span></p>
 <h1>Thirteen Island Pairs</h1>
 <p class="lede">Josh's shortlist plus four the list missed. Every pair is one <b>town stop</b> and one <b>resort stop</b>. Rate them, mark them in or out, and leave notes. Nothing here is a selection — this is the set still worth arguing about. <a href="./" style="color:var(--accent)">&larr; back to the trip page</a></p>
 
@@ -555,12 +568,13 @@ function card(p,myRank){
      '<span class="txt">'+p.link.mode+' · '+p.link.time+'</span>'+
      '<span class="freq">'+p.link.freq+'</span>'+
      '<span class="verdict">'+p.link.v+'</span></div>'+
-   '<div class="meters">'+meter("Trip",p.trip,N,true,p.trip<=10)+
-     meter("Girls",p.girls,N,true,p.girls<=10)+
-     meter("Contrast",p.contrast,13,false,p.contrast>=13)+'</div>'+
-   '<div class="lodge"><span class="llab">Lodging</span>'+lchip(p.a)+lchip(p.b)+'</div>'+
-   '<div class="note">'+p.note+'</div>'+
-   takeBlock(p);
+   '<div class="lower"><div class="lcol">'+
+     '<div class="meters">'+meter("Trip",p.trip,N,true,p.trip<=10)+
+       meter("Girls",p.girls,N,true,p.girls<=10)+
+       meter("Contrast",p.contrast,13,false,p.contrast>=13)+'</div>'+
+     '<div class="lodge"><span class="llab">Lodging</span>'+lchip(p.a)+lchip(p.b)+'</div>'+
+     '<div class="note">'+p.note+'</div></div>'+
+   '<div class="rcol">'+takeBlock(p)+'</div></div>';
   return el;
 }
 

@@ -22,6 +22,7 @@ GH_USER="$(gh api user --jq .login 2>>"$LOG")"
 [ -n "$GH_USER" ] || { log "FATAL: could not resolve gh user"; read -p "Return to close..."; exit 13; }
 log "gh user: $GH_USER"
 [ -f pairs.html ] || { log "FATAL: pairs.html not found in $DIR"; read -p "Return to close..."; exit 14; }
+log "nav link in index.html: $(grep -c 'href=\"pairs.html\"' index.html) occurrence(s)"
 
 # restamp version + time so the header can never go stale
 STAMP="$(python3 - pairs.html <<'PYEOF'
@@ -42,7 +43,7 @@ MSG="${1:-pairs page: island pair shortlist, $STAMP ET}"
 run git fetch --all --prune || true
 run git checkout main || run git checkout -b main
 run git pull --ff-only origin main || true
-run git add -- pairs.html .gitignore publish_pairs.command
+run git add -- pairs.html index.html .gitignore publish_pairs.command
 if git diff --cached --quiet; then log "no changes to commit"; else run git commit -m "$MSG"; fi
 run git push -u origin main || { log "FATAL: push failed"; read -p "Return to close..."; exit 22; }
 
