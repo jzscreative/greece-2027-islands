@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greece 2027 · v12 · 260914 1315</title>
+<title>Greece 2027 · v13 · 260914 1420</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="description" content="Athens, an island town, a resort. The family trip plan, one long scroll.">
@@ -202,16 +202,71 @@ html,body{overflow-x:clip}
 @media (max-width:900px){ .orient{grid-template-columns:1fr} .maps{grid-template-columns:110px 1fr;max-width:520px} .card{grid-template-columns:1fr;gap:12px} .card figcaption h4{font-size:19px} .card figcaption p{font-size:15.5px} .pick .pickhint{display:none}
   .plan{grid-template-columns:1fr} .draft{position:static} .stophead{position:static} .optbar{top:var(--navH,48px);flex-wrap:wrap;gap:6px 12px} .optbar .tag{margin-left:0;text-align:left;width:100%} .island{scroll-margin-top:60px} }
 @media (max-width:640px){ .ov img{height:36vh;min-height:200px} .ph2{grid-template-columns:1fr;gap:6px} .card.wide{grid-column:auto} #map .badge{font-size:12px} .plan .stop .kind{font-size:22px} }
+/* ---- five-island comparison (v13) ---- */
+.fivewrap{margin:34px 0 8px;padding:26px 0 6px;border-top:2px solid var(--rule);border-bottom:2px solid var(--rule)}
+.fivehead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.fivehead h3{font-family:var(--f-d);font-size:clamp(22px,3.4vw,31px);line-height:1.12;margin:0;letter-spacing:-.01em}
+.fivehead .kick{font-family:var(--f-m);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--acc)}
+.fivelede{font-size:17px;line-height:1.62;color:var(--ink2);max-width:74ch;margin:8px 0 20px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 26px}
+.split .sp{background:var(--chip);border:1px solid var(--rule);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.split .sp h4{font-family:var(--f-m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:0 0 7px}
+.split .sp p{margin:0;font-size:15px;line-height:1.58;color:var(--ink2)}
+.split .sp b{color:var(--ink)}
+.relmap{background:var(--chip);border:1px solid var(--rule);border-radius:12px;padding:12px;box-shadow:var(--shadow);margin:0 0 26px}
+.relmap svg{display:block;width:100%;height:auto;border-radius:8px;background:var(--sea)}
+.relmap figcaption{font-size:13px;line-height:1.5;color:var(--mute);padding:9px 4px 2px}
+.rm-dot{fill:var(--acc);stroke:#fff;stroke-width:2}
+.rm-fin{fill:var(--route);stroke:#fff;stroke-width:2}
+.rm-ath{fill:var(--ink);stroke:#fff;stroke-width:2}
+.rm-lbl{font-family:var(--f-b);font-size:15px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:4px;stroke-linejoin:round}
+.rm-sm{font-size:13px;font-weight:600;fill:var(--ink2)}
+.rm-link{fill:none;stroke:var(--acc);stroke-width:2.4;stroke-linecap:round;opacity:.75}
+.rm-link.weak{stroke-dasharray:5 5;opacity:.5;stroke:var(--mute)}
+.rm-t{font-family:var(--f-m);font-size:11px;fill:var(--acc2);paint-order:stroke;stroke:var(--bg);stroke-width:3.5px;stroke-linejoin:round}
+.fives{display:grid;gap:16px}
+.fivecard{background:var(--chip);border:1px solid var(--rule);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:280px 1fr}
+.fivecard .fpic{position:relative;min-height:100%;background:var(--bg2)}
+.fivecard .fpic img{display:block;width:100%;height:100%;object-fit:cover;min-height:230px}
+.fivecard .fpic .cr{position:absolute;left:0;bottom:0}
+.fivecard .fbody{padding:18px 20px 16px}
+.fivecard .ftop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.fivecard h4{font-family:var(--f-d);font-size:25px;line-height:1.1;margin:0;letter-spacing:-.01em}
+.fivecard .own{font-family:var(--f-m);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--acc);border-radius:99px;padding:3px 9px}
+.fivecard .oneline{font-size:16.5px;line-height:1.55;color:var(--ink);margin:8px 0 12px;max-width:62ch}
+.fivecard dl{display:grid;grid-template-columns:112px 1fr;gap:3px 14px;margin:0;font-size:14.5px;line-height:1.5}
+.fivecard dt{font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:4px}
+.fivecard dd{margin:0;color:var(--ink2);padding-top:2px}
+.fivecard dd b{color:var(--ink)}
+.fivecard .cost{margin:12px 0 0;padding:9px 12px;background:var(--bg2);border-radius:8px;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.fivecard .cost b{color:var(--ink)}
+.whowrap{margin:30px 0 6px}
+.whowrap h4,.sortwrap h4{font-family:var(--f-d);font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+.whowrap p.sub,.sortwrap p.sub{font-size:15px;line-height:1.58;color:var(--ink2);margin:0 0 14px;max-width:74ch}
+.sortwrap{margin:28px 0 10px}
+.sorts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sorts .q{background:var(--chip);border:1px solid var(--rule);border-radius:12px;padding:15px 17px;box-shadow:var(--shadow)}
+.sorts .q .n{font-family:var(--f-m);font-size:11px;letter-spacing:.12em;color:var(--acc);text-transform:uppercase}
+.sorts .q h5{font-family:var(--f-d);font-size:18px;margin:5px 0 7px;line-height:1.25}
+.sorts .q p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink2)}
+.sorts .q p b{color:var(--ink)}
+@media(max-width:880px){
+  .split{grid-template-columns:1fr}
+  .fivecard{grid-template-columns:1fr}
+  .fivecard .fpic img{min-height:190px;max-height:230px}
+  .sorts{grid-template-columns:1fr}
+  .fivecard dl{grid-template-columns:96px 1fr;font-size:14px}
+}
 </style>
-<div class="draft"><span class="v" id="v-badge">v11</span> <span id="v-stamp">edited 14 Sep 2026 · 02:10 ET</span> · Working draft · private, for the trip party</div>
+<div class="draft"><span class="v" id="v-badge">v13</span> <span id="v-stamp">edited 14 Sep 2026 · 14:20 ET</span> · Working draft · private, for the trip party</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
-  <p class="brand">Greece 2027<small>City · island town · resort</small><span class="ver" id="v-nav">v12 · 260914 1315 ET</span></p>
+  <p class="brand">Greece 2027<small>City · island town · resort</small><span class="ver" id="v-nav">v13 · 260914 1420 ET</span></p>
   <a href="#overview">The plan</a>
   <a href="pairs.html">Island pairs &#8599;</a>
   <a href="#athens" class="nights">Stop 1 · Athens <span class="n">3–4 nights</span></a>
   <a href="#island" class="nights">Stop 2 · Island town <span class="n">4–5 nights</span></a>
-  <a href="#isl-karpathos" class="sub">Karpathos</a><a href="#isl-kalymnos" class="sub">Kalymnos</a><a href="#isl-astypalea" class="sub">Astypalea</a><a href="#isl-naxos" class="sub">Naxos</a><a href="#isl-syros" class="sub">Syros</a><a href="#isl-symi" class="sub">Symi</a><a href="#isl-chalki" class="sub">Chalki</a>
+  <a href="#five" class="sub">Compare the five</a><a href="#isl-karpathos" class="sub">Karpathos</a><a href="#isl-kalymnos" class="sub">Kalymnos</a><a href="#isl-astypalea" class="sub">Astypalea</a><a href="#isl-naxos" class="sub">Naxos</a><a href="#isl-syros" class="sub">Syros</a><a href="#isl-symi" class="sub">Symi</a><a href="#isl-chalki" class="sub">Chalki</a>
   <a href="#finish" class="nights">Stop 3 · Resort <span class="n">5–6 nights</span></a>
   <a href="#isl-rhodes" class="sub">Rhodes</a><a href="#isl-kos" class="sub">Kos</a><a href="#isl-crete" class="sub">Crete</a>
   <a href="#compare">Side by side</a>
@@ -256,6 +311,144 @@ html,body{overflow-x:clip}
   <div class="stophead"><span class="eyebrow">Stop 2 · the real Greece · 3–5 nights · one of seven</span><h2>The island town</h2></div>
   <p class="lede">Seven candidates, presented as equals. Every one is a real working island with a town you can walk, a harbour with fishing boats in it, and food worth the trip, and there is always souvlaki, grilled chicken and fries for anyone who has had enough octopus. They differ in how quiet they are, how easy the beach is, whether the whole group can stay together, and how the hop onward works. Nothing has been ruled out.</p>
   <div class="aside" style="margin-top:0"><b>Why not Mykonos, Santorini, Paros, Milos or Ios</b>They are the islands everyone has heard of, and that is the problem: in summer they run on cruise crowds and Instagram, with menus and hotel rates priced for a different trip. Mykonos might as well be Miami Beach. The seven below have the same light and the same sea, real towns, better food, and prices that still make sense.</div>
+
+<div class="fivewrap" id="five">
+  <div class="fivehead"><span class="kick">How these differ</span><h3>Five that are hard to tell apart, and the one thing each is best at</h3></div>
+  <p class="fivelede">Karpathos, Kalymnos, Syros, Symi and Chalki all make the same promise: a real Greek island town, not a resort. They keep it in five completely different ways. Each one below owns a single thing that none of the other four can match, and each one pays for it somewhere specific. Naxos and Astypalea have their own cards further down.</p>
+
+  <div class="split">
+    <div class="sp"><h4>Three of them are car islands</h4><p><b>Karpathos, Kalymnos and Syros.</b> The town and the beach are separate places, and a car is how you close the gap. Karpathos is the extreme case: forty-nine kilometres end to end, with the food and the tradition an hour north of the beach base. You would still walk within each place, because every village worth being in is pedestrian. The car is how you get to one, not how you move inside it.</p></div>
+    <div class="sp"><h4>Two of them are walk islands</h4><p><b>Symi and Chalki.</b> Everything is where you are standing. Chalki is the stricter of the two, and it is strict by law: the municipality bans cars and mopeds inside the settlement from 1 May to 31 October, and no vehicle rental exists on the island. Symi is not car-free, but it has more steps and footpaths than roads, which is why it feels that way.</p></div>
+  </div>
+
+  <figure class="relmap">
+    <svg viewBox="0 0 1000 760" role="img" aria-label="Map of the south-east Aegean showing the five island candidates, Athens, and the three resort finishes">
+      <rect width="1000" height="760" fill="var(--sea)"/><use href="#greece-land"/>
+      <path class="rm-link" d="M723.4,553.6 L754.3,568.4"/>
+      <path class="rm-link" d="M723.4,553.6 L666.9,526.2"/>
+      <path class="rm-link" d="M702.3,592.8 L754.3,568.4"/>
+      <path class="rm-link" d="M652.9,513.3 L666.9,526.2"/>
+      <path class="rm-link" d="M652.9,513.3 L754.3,568.4"/>
+      <path class="rm-link" d="M667.6,661.1 L754.3,568.4"/>
+      <path class="rm-link weak" d="M480.6,462.1 L387.0,408.1"/>
+      <path class="rm-link weak" d="M387.0,408.1 Q622.6,369.2 754.3,568.4"/>
+      <circle class="rm-ath" cx="387.0" cy="408.1" r="8"/><text class="rm-lbl" x="373" y="404" text-anchor="end">Athens</text>
+      <circle class="rm-dot" cx="480.6" cy="462.1" r="7.5"/><text class="rm-lbl" x="468" y="454" text-anchor="end">Syros</text>
+      <circle class="rm-dot" cx="652.9" cy="513.3" r="7.5"/><text class="rm-lbl" x="640" y="507" text-anchor="end">Kalymnos</text>
+      <circle class="rm-dot" cx="723.4" cy="553.6" r="7.5"/><text class="rm-lbl" x="737" y="547" text-anchor="start">Symi</text>
+      <circle class="rm-dot" cx="702.3" cy="592.8" r="7.5"/><text class="rm-lbl" x="689" y="607" text-anchor="end">Chalki</text>
+      <circle class="rm-dot" cx="667.6" cy="661.1" r="7.5"/><text class="rm-lbl" x="681" y="667" text-anchor="start">Karpathos</text>
+      <circle class="rm-fin" cx="666.9" cy="526.2" r="7"/><text class="rm-lbl rm-sm" x="666.9" y="549" text-anchor="middle">Kos</text>
+      <circle class="rm-fin" cx="754.3" cy="568.4" r="7"/><text class="rm-lbl rm-sm" x="768" y="590" text-anchor="start">Rhodes</text>
+      <circle class="rm-fin" cx="519.6" cy="687.7" r="7"/><text class="rm-lbl rm-sm" x="519.6" y="718" text-anchor="middle">Crete</text>
+      <g transform="translate(40,690)">
+        <line class="rm-link" x1="0" y1="0" x2="34" y2="0"/><text class="rm-t" x="42" y="4">a direct crossing that runs most days</text>
+        <line class="rm-link weak" x1="0" y1="22" x2="34" y2="22"/><text class="rm-t" x="42" y="26">a connection through Athens</text>
+      </g>
+    </svg>
+    <figcaption>The five candidates in blue, the three resort finishes in orange. Four of the five sit inside the Dodecanese cluster, close enough to Rhodes and Kos that a boat does the job. Syros is in the Cyclades, which is why everything from there goes back through Athens. <span class="mm-src">Coastlines: OpenStreetMap contributors.</span></figcaption>
+  </figure>
+
+  <div class="fives">
+
+    <article class="fivecard">
+      <div class="fpic"><img src="photos/karpathos_olympos.jpg" alt="Olympos village on Karpathos: stone and painted houses stacked on a mountain ridge" width="1000" height="750" loading="lazy"><span class="cr">Luca Aless · Wikimedia Commons</span></div>
+      <div class="fbody">
+        <div class="ftop"><h4>Karpathos</h4><span class="own">Owns: living tradition</span></div>
+        <p class="oneline">The one where the tradition is still being lived rather than performed, and the one where you will spend the most time in a car.</p>
+        <dl>
+          <dt>Town at 9pm</dt><dd>Pigadia is a real working town with pedestrian lanes and evening street closures, but it is 1960s concrete, not stone. <b>Menetes</b>, eight kilometres up, is the pretty one that still has two tavernas and a named bakery.</dd>
+          <dt>Cars</dt><dd>Essential. Forty-nine kilometres end to end. <b>Olympos</b>, the village with the working communal wood-fired ovens, is sixty to seventy-five minutes from the southern beach base. The bus there runs once each way, five days a week.</dd>
+          <dt>Beaches</dt><dd>Amoopi's organised coves in the south, Apella and Kyra Panagia on the wild east coast. Three independent sources name the east-coast bays and Amoopi as the sheltered ones.</dd>
+          <dt>Lodging</dt><dd>Six-villa clusters with private pools exist and fit the shape well, but almost all of them are in the south at Amoopi. Nothing comparable was found in the north or west.</dd>
+          <dt>Getting on</dt><dd>Olympic Air nonstop to Rhodes, forty to forty-five minutes, six days a week, state-contracted through October 2027. The most secure air link of the five.</dd>
+          <dt>Who goes</dt><dd>Italians above all: nine Italian city pairs fly in, against no UK route at all. Then Germans, Austrians and Scandinavian charter. Windsurfers, concentrated at the far southern tip. And the American diaspora, roughly fifteen thousand people of Karpathian descent, more than twice the island's permanent population, concentrated in northern New Jersey.</dd>
+        </dl>
+        <p class="cost"><b>What it costs you.</b> The food story and the beach base are an hour apart, and only a car closes it. The wind is the one genuinely unresolved question on this page: every published Karpathos wind number comes from a single station beside a world-class windsurf beach, and a Dutch guide says so in its own words about its own graph.</p>
+      </div>
+    </article>
+
+    <article class="fivecard">
+      <div class="fpic"><img src="photos/kalymnos_pothia.jpg" alt="Pothia harbour on Kalymnos: fishing boats along the quay beneath neoclassical houses" width="1000" height="750" loading="lazy"><span class="cr">Tomisti · Wikimedia Commons</span></div>
+      <div class="fbody">
+        <div class="ftop"><h4>Kalymnos</h4><span class="own">Owns: the water</span></div>
+        <p class="oneline">The one where you drive your own boat with no licence, eat the best fish, and accept that the town is loud.</p>
+        <dl>
+          <dt>Town at 9pm</dt><dd>Pothia is a proper Greek working town, neoclassical and Italian-era rather than whitewashed, with more Greeks than tourists on the harbour front. Visitors describe it, repeatedly and independently, as noisy with scooters. <b>Telendos</b>, the car-free islet across the strait, is the evening walk instead: one lane of tavernas, a two-euro boat every half hour until late, and the day crowd gone.</dd>
+          <dt>Cars</dt><dd>Useful, not essential, if you base on the Myrties and Massouri strip. Pothia to Massouri is twenty to thirty minutes on poor narrow roads. The municipal bus runs that route several times a day.</dd>
+          <dt>Beaches</dt><dd>Massouri and Myrties face Telendos across a narrow strait, and the sunset behind it is the island's picture. Licence-free thirty-horsepower boats for up to seven people are the thing nowhere else on this list offers.</dd>
+          <dt>Lodging</dt><dd><b>Meltemi Studios</b> at Massouri is a complex of thirteen apartments at one address. <b>Kalypso</b> at Myrties has the only fenced children's pool found anywhere on the island. Correction to earlier research: the Myrties boutique hotel has only two units and cannot take twelve.</dd>
+          <dt>Getting on</dt><dd>The best onward connections of the five. Pothia to Kos runs about fifty-two sailings a week in late June, roughly seven a day, thirty to forty-five minutes, landing at Mastichari seven kilometres from Kos airport. Rhodes is a near-daily catamaran, two and three-quarter to three hours.</dd>
+          <dt>Who goes</dt><dd>Rock climbers above all, from every continent, spring through autumn. Then Italians, divers, walkers, the yacht crowd, and sponge-heritage visitors. Its reputation among Greeks is as a working island, not a pretty one.</dd>
+        </dl>
+        <p class="cost"><b>What it costs you.</b> It is rugged rather than cute, and nowhere on the island delivers the specific pleasure of stepping out at night into a dense, quiet, car-free lattice of lanes. Telendos is the workaround, and it is a good one, but it is a boat ride.</p>
+      </div>
+    </article>
+
+    <article class="fivecard">
+      <div class="fpic"><img src="photos/syros_square.jpg" alt="The neoclassical City Hall on Miaouli Square, Ermoupoli, with palm trees and a marble forecourt" width="1000" height="750" loading="lazy"><span class="cr">Wikimedia Commons</span></div>
+      <div class="fbody">
+        <div class="ftop"><h4>Syros</h4><span class="own">Owns: town life</span></div>
+        <p class="oneline">The one that is a real small city getting on with its own life, and the only one where a fifteen-year-old could walk out of the door alone and find something.</p>
+        <dl>
+          <dt>Town at 9pm</dt><dd><b>Miaouli Square</b> is a car-free marble plaza roughly a hundred and forty metres by eighty, it fills from about half past eight, and it stays busy past midnight. Children run about it while the adults sit. Django Gelato is in the centre of town. This is the best evening space on the whole page.</dd>
+          <dt>Cars</dt><dd>Not needed if you stay central. The ferry quay to the square is four hundred and forty metres. <b>Ano Syros</b>, the medieval village above the port, is genuinely car-free and stepped. Take the minibus up and walk down; a family travel writer with teenagers was blunt about not walking up.</dd>
+          <dt>Beaches</dt><dd>The weakness, and there is no arguing it away. Galissas, Kini and Vari are on the far side of the island by bus. But the Vaporia district has swimming platforms below the mansions, four minutes' walk from the square, and that is where people actually swim.</dd>
+          <dt>Lodging</dt><dd><b>Villa Evangelini</b> at Poseidonia is a main house plus three separate guest houses in one garden with a full-size pool, sleeping fifteen. It is the closest thing found anywhere to the exact shape wanted. The catch is that Poseidonia is ten kilometres from Ermoupoli, so it trades the square for the pool.</dd>
+          <dt>Getting on</dt><dd>Through Athens for both Rhodes and Kos. A short ferry to Naxos. This is the one structural disadvantage of leaving the Dodecanese.</dd>
+          <dt>Who goes</dt><dd>Athenian weekenders and second-home owners, French visitors, families, cultural and festival visitors. Cruise traffic is a handful of small ships a month, not megaships. June carries about fifty-six per cent of August's ferry arrivals, so late June sits on the rising side of the curve and well below the peak.</dd>
+        </dl>
+        <p class="cost"><b>What it costs you.</b> Not size. Ermoupoli has eleven thousand people, so the Old San Juan comparison is off by a factor of thirty. What it costs you is <i>Cycladic-ness</i>. It is marble, pastel and neoclassical, closer to a small Adriatic port town than to a whitewashed village, and one local guide calls Ano Syros the one corner of the island that looks Cycladic at all. The failure mode people report is boredom, never crowding.</p>
+      </div>
+    </article>
+
+    <article class="fivecard">
+      <div class="fpic"><img src="photos/symi_houses.jpg" alt="Colourful neoclassical houses climbing the hillside above Symi harbour" width="1000" height="700" loading="lazy"><span class="cr">Wikimedia Commons</span></div>
+      <div class="fbody">
+        <div class="ftop"><h4>Symi</h4><span class="own">Owns: beauty and movement</span></div>
+        <p class="oneline">The one that is the postcard, the one you can always get off, and the one that fills with day-trippers between noon and four.</p>
+        <dl>
+          <dt>Town at 9pm</dt><dd>This is the whole answer on Symi. The excursion boats leave at about quarter past four, and after that the harbour empties and, in visitors' words, feels lived-in rather than staged. There is a wood-oven bakery, a butcher, a deli and a new children's play park on the front. <b>Chorio</b>, up the five hundred marble steps, is quieter still and has gentler lanes than the harbour once you are up there.</dd>
+          <dt>Cars</dt><dd>Not car-free. Twenty-two kilometres of main road, and the quayside is a through road; only the central square is a pedestrian area. But the island has forty-one kilometres of steps and footpaths against twenty-two of road, which is why it feels car-light. Hourly bus to Chorio and Pedi, last one at midnight in high season.</dd>
+          <dt>Beaches</dt><dd>Pebble, essentially all of them, except Pedi, Agios Nikolaos and Giala, which have sandy entry. Nos is a ten-minute walk from the clock tower. Most coves are water-taxi only, ten to seventeen euros return. Bring water shoes.</dd>
+          <dt>Lodging</dt><dd><b>The Selene</b> at Nimborio is five suites and a house at one address taking fourteen, rentable whole. <b>Iapetos Village</b> in Gialos is maisonettes around one garden, fifty metres from the square, with the island's real pool. Note: Symi does not generally permit uncovered outdoor pools, so every pool here is small and covered.</dd>
+          <dt>Getting on</dt><dd>The best crossing on the board and it is not close. Rhodes in forty-five to fifty minutes, four or five operators, every day. Kos in about an hour, six or seven days a week. Twelve people could move on almost any date, in either direction.</dd>
+          <dt>Who goes</dt><dd>Day-trippers, numerically and overwhelmingly: the mayor puts it at one thousand to five thousand a day in season against two thousand six hundred residents. Overnight it is older repeat British and northern European independents, the yacht crowd, walkers, and Greek pilgrims to Panormitis. Forum regulars actively steer teenagers away as too quiet.</dd>
+        </dl>
+        <p class="cost"><b>What it costs you.</b> The heat, honestly. There is no weather station on Symi, so every temperature figure online is model output on a grid too coarse to see the island. But it is a bare limestone bowl whose harbour traps sun and blocks breeze, locals go indoors in the early afternoon, and the walking guide tells you to start at six in the morning and carry three litres of water each.</p>
+      </div>
+    </article>
+
+    <article class="fivecard">
+      <div class="fpic"><img src="photos/chalki_hero.jpg" alt="Emborio on Chalki: pastel neoclassical houses and a stone clock tower around a small pedestrianised harbour" width="1600" height="1205" loading="lazy"><span class="cr">Wikimedia Commons</span></div>
+      <div class="fbody">
+        <div class="ftop"><h4>Chalki</h4><span class="own">Owns: everyone together</span></div>
+        <p class="oneline">The one where four families get four front doors on the same car-free quay, and the one where you would run out of things to do first.</p>
+        <dl>
+          <dt>Town at 9pm</dt><dd>Emborio is four hundred metres of harbour front, walkable end to end in fifteen minutes, with a bakery, mini-markets, a school, a town hall and ten to fourteen tavernas. Ice cream at Blue Marine and The Twins. The evening is dinner, a walk, and the clock tower lit up. One music bar on the entire island.</dd>
+          <dt>Cars</dt><dd>The only genuinely car-free base of the five, and it is by municipal by-law: cars and mopeds are prohibited inside the settlement from 1 May to 31 October, exactly the season you would travel in. No vehicle rental exists on the island. One or two taxis and a low-frequency seasonal minibus.</dd>
+          <dt>Beaches</dt><dd>One true sandy beach, Pontamos, a hundred and fifty metres long, ten minutes' walk. Everything else is pebble or boat-only. But swimming platforms with ladders run along the waterfront, so the children go in and out of the sea from the doorstep without anyone organising a beach trip.</dd>
+          <dt>Lodging</dt><dd><b>Captains Memories</b>: four harbourside houses, one layer back from the water, fourteen at maximum and twelve comfortably. <b>Atlantis Houses</b> and <b>Pontamos Villas</b> are the other multi-unit options, and the island's own forum regulars recommend exactly this shape over one big villa. There is no swimming pool anywhere on Chalki.</dd>
+          <dt>Getting on</dt><dd>Rhodes by two structurally independent routes: about ten sailings a week from Rhodes Town, plus a local ferry from Kamiros Skala on Rhodes' west coast up to three times a day.</dd>
+          <dt>Who goes</dt><dd>Older repeat British self-caterers who argue about taverna rankings on the same forum year after year, Italians, couples, walkers and divers. Greek press calls it the aristocratic island and writes about it in a register of elegance and melancholy. One operator runs painting holidays in May, which tells you the customer precisely.</dd>
+        </dl>
+        <p class="cost"><b>What it costs you.</b> Depth. Sunvil, which sells the island, says visitors "are forced to relax, because there is not much to do here except eat, swim, read, sleep." A forum regular, answering a family almost exactly this one, wrote: "there isn't a lot for kids to do on Halki unless you're the bucket and spade type. And there isn't much sand. Also no swimming pools." Three nights works. Four is the ceiling, and the fifteen-year-old feels it before the nine-year-old does.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="sortwrap">
+    <h4>Three questions that sort them</h4>
+    <p class="sub">Not preferences. Structural forks, where the answer eliminates islands rather than ranking them.</p>
+    <div class="sorts">
+      <div class="q"><span class="n">One</span><h5>Do you want to drive?</h5><p>If a car is only for expanding reach and not the default way through a day, that favours <b>Symi</b> and <b>Chalki</b>, where everything is walkable, and <b>Syros</b> if you stay central. Karpathos fails this hardest: its best thing is an hour's drive from its beach.</p></div>
+      <div class="q"><span class="n">Two</span><h5>Must the island entertain the teenagers?</h5><p>If the bar is a late gelato and a walk through town, four of the five clear it easily and <b>Syros</b> clears it by a mile. <b>Chalki</b> is the one that is genuinely marginal, and the people who love Chalki say so themselves.</p></div>
+      <div class="q"><span class="n">Three</span><h5>Does everybody need to be together?</h5><p>If the answer is "not required, but the option matters, and several units in one place is the shape," then <b>Chalki</b> answers it most cleanly of anywhere researched, and <b>Symi</b>, <b>Syros</b> and <b>Kalymnos</b> all have a real candidate. On Karpathos the answer exists but only in the south.</p></div>
+    </div>
+  </div>
+</div>
+
   
 <article class="island" id="isl-karpathos">
   <div class="optbar"><span class="opt">Stop 2 · option 1 of 7</span><h3>Karpathos</h3><span class="tag">Deep, traditional, a little far from its beaches</span></div>
