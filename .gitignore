@@ -4,3 +4,9 @@ publish.log
 publish_pairs.log
 pairs_live_url.txt
 index_backup_*.html
+publish_pairs.command.bak_*
+
+_archive/
+_build/
+_tmp/
+photos/_new_credits_*.json

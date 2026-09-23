@@ -43,7 +43,7 @@ MSG="${1:-pairs page: island pair shortlist, $STAMP ET}"
 run git fetch --all --prune || true
 run git checkout main || run git checkout -b main
 run git pull --ff-only origin main || true
-run git add -- pairs.html index.html .gitignore publish_pairs.command
+run git add -- pairs.html index.html photos .gitignore publish_pairs.command
 if git diff --cached --quiet; then log "no changes to commit"; else run git commit -m "$MSG"; fi
 run git push -u origin main || { log "FATAL: push failed"; read -p "Return to close..."; exit 22; }
 
