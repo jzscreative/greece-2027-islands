@@ -258,7 +258,7 @@ html,body{overflow-x:clip}
   .fivecard dl{grid-template-columns:96px 1fr;font-size:14px}
 }
 </style>
-<div class="draft"><span class="v" id="v-badge">v13</span> <span id="v-stamp">edited 14 Sep 2026 · 14:20 ET</span> · Working draft · private, for the trip party</div>
+<div class="draft"><span class="v" id="v-badge">v14</span> <span id="v-stamp">edited 23 Sep 2026 &middot; 14:20 ET</span> · Working draft · private, for the trip party</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
   <p class="brand">Greece 2027<small>City · island town · resort</small><span class="ver" id="v-nav">v14 &middot; 260923 1420 ET</span></p>
@@ -489,7 +489,7 @@ html,body{overflow-x:clip}
 </section>
 
 <section id="finish">
-  <div class="stophead"><span class="eyebrow">Stop 3 · the resort · 5–6 nights · one of three</span><h2>The finish</h2></div>
+  <div class="stophead"><span class="eyebrow">Stop 3 · the resort · 5–6 nights · one of two</span><h2>The finish</h2></div>
   <p class="lede">Three ways to finish, presented as equals: the same job (a place that takes the whole group, with pools, sea and food, and boats leaving from nearby) done by three different islands. Two different models have worked for this group before and they are not the same thing. The house: one big villa with a pool over the water, everyone under one roof, cooking and drinks our own, cheaper per family, and it only works if everyone commits to the same week. The resort: family suites booked side by side, half board or dinner credits so nobody plans meals, clubs for the kids and the teenagers, a real town a short walk or a water taxi away, and families can come for three nights or six. Which model the finish takes is half of the anchor question below.</p>
   
 <article class="island" id="isl-rhodes">
@@ -623,7 +623,7 @@ html,body{overflow-x:clip}
 (function(){
 const P={"athens": [387.0, 408.1], "rhodes": [754.3, 568.4], "kalymnos": [652.9, 513.3], "naxos": [527.7, 501.8], "kos": [666.9, 526.2], "syros": [480.6, 462.1], "milos": [449.1, 539.6], "amorgos": [562.5, 528.5]}, ISL={"syros": "Syros", "naxos": "Naxos", "milos": "Milos", "amorgos": "Amorgos", "kalymnos": "Kalymnos"}, FIN={"rhodes": "Rhodes", "kos": "Kos"}, NIGHTS={"athens": "3\u20134", "island": "3\u20135", "rhodes": "5\u20136"};
 const NS='http://www.w3.org/2000/svg', keys=Object.keys(ISL), fkeys=Object.keys(FIN);
-const OFF={kalymnos:[-12,3],naxos:[-11,-8],syros:[-11,-8],milos:[-11,-6],amorgos:[12,-6],kos:[12,14],rhodes:[14,26]};
+const OFF={kalymnos:[-12,3],naxos:[-11,-8],syros:[-11,-8],milos:[-11,-6],amorgos:[-12,18],kos:[12,14],rhodes:[14,26]};
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const LEG_MS=1300, PAUSE_MS=350, END_MS=900;
 function el(t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
@@ -657,9 +657,9 @@ function drawStatic(k,f){
   G.anchors.appendChild(el('circle',{class:'anchor',cx:P.athens[0],cy:P.athens[1],r:8}));G.labels.appendChild(el('text',{class:'lbl',x:P.athens[0]-14,y:P.athens[1]-2,'text-anchor':'end'},'Athens'));
   badge(G.labels,P.athens[0]-2,P.athens[1]-30,NIGHTS.athens+' nights');
   if(k){const bo=(k==='kalymnos')?[95,-14]:[6,-40];badge(G.labels,P[k][0]+bo[0],P[k][1]+bo[1],NIGHTS.island+' nights');}
-  else {let x=0,y=0;keys.forEach(kk=>{x+=P[kk][0];y+=P[kk][1]});badge(G.labels,x/keys.length-160,y/keys.length+92,NIGHTS.island+' nights · one of seven');}
-  if(f){const bo=(f==='crete')?[0,58]:[78,-8];badge(G.labels,P[f][0]+bo[0],P[f][1]+bo[1],NIGHTS.rhodes+' nights');}
-  else badge(G.labels,P.rhodes[0]+96,P.rhodes[1]-8,NIGHTS.rhodes+' nights · one of three');
+  else {let x=0,y=0;keys.forEach(kk=>{x+=P[kk][0];y+=P[kk][1]});badge(G.labels,x/keys.length-160,y/keys.length+92,NIGHTS.island+' nights · one of five');}
+  if(f){const bo=[78,-8];badge(G.labels,P[f][0]+bo[0],P[f][1]+bo[1],NIGHTS.rhodes+' nights');}
+  else badge(G.labels,P.rhodes[0]+96,P.rhodes[1]-8,NIGHTS.rhodes+' nights · one of two');
 }
 function makePlane(){const g=el('g',{class:'plane'});g.appendChild(el('use',{href:'#plane',class:'shadow',x:-15,y:-12,width:30,height:30}));g.appendChild(el('use',{href:'#plane',x:-15,y:-15,width:30,height:30}));G.planes.appendChild(g);return g;}
 function fly(k,f){
