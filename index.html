@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greece 2027 &middot; v32 &middot; 260925</title>
+<title>Greece 2027 &middot; v33 &middot; 260925</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="description" content="Athens, an island town, and a week of not moving. The family trip plan, one long scroll.">
@@ -338,11 +338,15 @@ main .sub{max-width:var(--measure)}
 @media(max-width:640px){.pairlist .pw{margin-left:0;width:100%;white-space:normal;line-height:1.45}
  .pairlist li{border-radius:12px;padding:10px 14px}
  .pairlist .pa,.pairlist .pb{font-size:18px}}
+
+/* ---- v33: the map picks a pair, not two halves ---- */
+.pick button i{font-style:normal;font-family:var(--f-m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 2px}
+.pick button.on i,.pick button.auto i{color:inherit;opacity:.75}
 </style>
-<div class="draft"><span class="v" id="v-badge">v32</span> <span id="v-stamp">edited 25 Sep 2026 &middot; 03:30 ET</span> · Working draft · private, for the trip party</div>
+<div class="draft"><span class="v" id="v-badge">v33</span> <span id="v-stamp">edited 25 Sep 2026 &middot; 04:15 ET</span> · Working draft · private, for the trip party</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
-  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v32 &middot; 260925 0330 ET</span></p>
+  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v33 &middot; 260925 0415 ET</span></p>
   <a href="#overview">The plan</a>
   <a href="#tassos">What Tassos says</a>
   <a href="#athens" class="nights">Stop 1 · Athens <span class="n">3–4 nights</span></a>
@@ -378,10 +382,10 @@ main .sub{max-width:var(--measure)}
 <use href="#greece-land"/>
 <g id="routes"></g><g id="trail"></g><g id="cands"></g><g id="anchors"></g><g id="planes"></g><g id="labels"></g>
 </svg>
-    <div class="pick"><span class="lab">Stop 2</span><button data-k="syros">Syros</button><button data-k="milos">Milos</button><button data-k="kalymnos">Kalymnos</button><span class="lab" style="margin-left:14px">Stop 3</span><button data-f="naxos">Naxos</button><button data-f="kos">Kos</button><span class="pickhint">tap to hold a route · tap again to release</span></div>
+    <div class="pick"><span class="lab">The three pairs</span><button data-p="0">Syros <i>then</i> Naxos</button><button data-p="1">Milos <i>then</i> Naxos</button><button data-p="2">Kalymnos <i>then</i> Kos</button><span class="pickhint">tap to hold one · tap again to release</span></div>
   </div>
   <p class="note routecap" id="routecap"></p>
-  <p class="note">The map draws the real air routing for each pair: nonstop where one exists, otherwise the island-hopping route flown by Sky Express, the Greek domestic airline, with its stops, or back through Athens. Syros and Milos both reach Naxos on a single direct ferry, which is why Naxos is the third stop that costs the least travel. Kalymnos is half an hour from Kos by boat. Anything else changes in Athens. The map cycles through the combinations; tap an island to hold one.</p>
+  <p class="note">Three pairs, and the map draws each one the way you would really travel it: Athens, the island, then the last week. Syros and Milos both reach Naxos on one direct ferry. Kalymnos is half an hour from Kos by boat. The map cycles through the three; tap one to hold it.</p>
 </section>
 <section id="tassos" style="padding-top:8px">
   <div class="rec">
@@ -663,6 +667,7 @@ main .sub{max-width:var(--measure)}
 (function(){
 const P={"athens": [387.0, 408.1], "kalymnos": [652.9, 513.3], "naxos": [527.7, 501.8], "kos": [666.9, 526.2], "syros": [480.6, 462.1], "milos": [449.1, 539.6]}, ISL={"syros": "Syros", "milos": "Milos", "kalymnos": "Kalymnos"}, FIN={"naxos": "Naxos", "kos": "Kos"}, NIGHTS={"athens": "3\u20134", "island": "3\u20135", "finish": "5\u20136"};
 const NS='http://www.w3.org/2000/svg', keys=Object.keys(ISL), fkeys=Object.keys(FIN);
+const PAIRS=[['syros','naxos'],['milos','naxos'],['kalymnos','kos']];
 const OFF={syros:[-11,-8],milos:[-11,-6],kalymnos:[-13,3],naxos:[-11,-9],kos:[12,14]};
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const LEG_MS=1300, PAUSE_MS=350, END_MS=900;
@@ -677,21 +682,22 @@ function routeD(from,to,flip){const avoid=Object.keys(P).filter(k=>k!==from&&k!=
 // Stop 2 is Syros, Milos and Kalymnos; Stop 3 is Naxos and Kos.
 // Syros and Milos both reach Naxos by a direct ferry, so those are drawn as one hop.
 // Kalymnos reaches Kos directly, half an hour by boat.
-const VIA={syros:{naxos:[],kos:['athens']},milos:{naxos:[],kos:['athens']},kalymnos:{naxos:['athens'],kos:[]}};
+const VIA={syros:{naxos:[]},milos:{naxos:[]},kalymnos:{kos:[]}};
 const NAME=Object.assign({athens:'Athens'},ISL,FIN);
 function waypoints(isl,fin){return ['athens',isl].concat(VIA[isl][fin]||[],[fin]);}
 function badge(g,x,y,label){const w=label.length*7.4+18;g.appendChild(el('rect',{class:'badge-bg',x:x-w/2,y:y-11,width:w,height:22,rx:11}));g.appendChild(el('text',{class:'badge',x:x,y:y+4,'text-anchor':'middle'},label));}
 const G={};['routes','trail','cands','anchors','planes','labels'].forEach(id=>G[id]=document.getElementById(id));
-let selI='', selF='', raf=0;
+let sel=-1, raf=0;
 function clear(g){while(g.firstChild)g.removeChild(g.firstChild);}
 function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
 function drawStatic(k,f){
   ['routes','trail','cands','anchors','planes','labels'].forEach(id=>clear(G[id]));
   keys.forEach(kk=>{const c=el('circle',{class:'cand'+(kk===k?' on':''),cx:P[kk][0],cy:P[kk][1],r:kk===k?9:6.5,tabindex:0,role:'button','aria-label':ISL[kk]});
-    c.addEventListener('click',()=>setI(kk===selI?'':kk));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setI(kk===selI?'':kk)}});G.cands.appendChild(c);
+    const pi=PAIRS.findIndex(pr=>pr[0]===kk);
+    c.addEventListener('click',()=>setP(pi===sel?-1:pi));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setP(pi===sel?-1:pi)}});G.cands.appendChild(c);
     const o=OFF[kk];G.labels.appendChild(el('text',{class:'lbl'+(kk===k?'':' small'),'data-k':kk,x:P[kk][0]+o[0],y:P[kk][1]+o[1],'text-anchor':o[0]<0?'end':'start'},ISL[kk]));});
   fkeys.forEach(ff=>{const c=el('circle',{class:'cand fin'+(ff===f?' on':''),cx:P[ff][0],cy:P[ff][1],r:ff===f?9:7,tabindex:0,role:'button','aria-label':FIN[ff]});
-    c.addEventListener('click',()=>setF(ff===selF?'':ff));c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setF(ff===selF?'':ff)}});G.cands.appendChild(c);
+    G.cands.appendChild(c);
     const o=OFF[ff];G.labels.appendChild(el('text',{class:'lbl'+(ff===f?'':' small'),'data-f':ff,x:P[ff][0]+o[0],y:P[ff][1]+o[1],'text-anchor':o[0]<0?'end':(o[0]===0?'middle':'start')},FIN[ff]));});
   G.anchors.appendChild(el('circle',{class:'anchor',cx:P.athens[0],cy:P.athens[1],r:8}));G.labels.appendChild(el('text',{class:'lbl',x:P.athens[0]-14,y:P.athens[1]-2,'text-anchor':'end'},'Athens'));
   badge(G.labels,P.athens[0]-2,P.athens[1]-30,NIGHTS.athens+' nights');
@@ -703,7 +709,7 @@ function drawStatic(k,f){
 function makePlane(){const g=el('g',{class:'plane'});g.appendChild(el('use',{href:'#plane',class:'shadow',x:-15,y:-12,width:30,height:30}));g.appendChild(el('use',{href:'#plane',x:-15,y:-15,width:30,height:30}));G.planes.appendChild(g);return g;}
 function fly(k,f){
   cancelAnimationFrame(raf); clear(G.trail); clear(G.planes);
-  const combos=[]; (k?[k]:keys).forEach(kk=>{(f?[f]:fkeys).forEach(ff=>combos.push([kk,ff]));}); let idx=0;
+  const combos=(sel>=0)?[PAIRS[sel]]:PAIRS.slice(); let idx=0;
   if(reduce){const [i0,f0]=combos[0];const W=waypoints(i0,f0);const seen={};for(let i=0;i<W.length-1;i++){const key=[W[i],W[i+1]].sort().join('|');G.routes.appendChild(el('path',{class:'route',d:routeD(W[i],W[i+1],!!seen[key])}));seen[key]=true;}const g=makePlane();const mid=P[i0];g.setAttribute('transform','translate('+((P.athens[0]+mid[0])/2)+','+((P.athens[1]+mid[1])/2-30)+') rotate(60)');return;}
   const plane=makePlane();
   function legSetup(from,to,flip,hot){const d=routeD(from,to,flip);if(hot)G.routes.appendChild(el('path',{class:'route halo',d:d}));G.routes.appendChild(el('path',{class:'route',d:d}));const path=el('path',{d:d});const L=path.getTotalLength();const flown=el('path',{class:'flown',d:d,'stroke-dasharray':L+' '+L,'stroke-dashoffset':L});G.trail.appendChild(flown);return {path,L,flown};}
@@ -715,10 +721,9 @@ function fly(k,f){
   function place(leg,u){const pt=leg.path.getPointAtLength(u*leg.L);const pt2=leg.path.getPointAtLength(Math.min(leg.L,u*leg.L+2));const ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI+90;plane.setAttribute('transform','translate('+pt.x.toFixed(1)+','+pt.y.toFixed(1)+') rotate('+ang.toFixed(1)+')');leg.flown.setAttribute('stroke-dashoffset',(leg.L*(1-u)).toFixed(1));}
   let legs=[],li=0,phase='fly',t0=null,waitUntil=0;
   function start(){const [isl,fin]=combos[idx%combos.length];clear(G.trail);
-    document.querySelectorAll('#labels .lbl[data-k]').forEach(t=>t.classList.toggle('hot',!k&&t.dataset.k===isl));
-    document.querySelectorAll('#labels .lbl[data-f]').forEach(t=>t.classList.toggle('hot',!f&&t.dataset.f===fin));
-    document.querySelectorAll('.pick button[data-k]').forEach(b=>b.classList.toggle('auto',!k&&b.dataset.k===isl));
-    document.querySelectorAll('.pick button[data-f]').forEach(b=>b.classList.toggle('auto',!f&&b.dataset.f===fin));
+    document.querySelectorAll('#labels .lbl[data-k]').forEach(t=>t.classList.toggle('hot',sel<0&&t.dataset.k===isl));
+    document.querySelectorAll('#labels .lbl[data-f]').forEach(t=>t.classList.toggle('hot',sel<0&&t.dataset.f===fin));
+    document.querySelectorAll('.pick button[data-p]').forEach(b=>b.classList.toggle('auto',sel<0&&+b.dataset.p===idx%combos.length));
     legs=buildLegs(isl,fin,!!k&&!!f);li=0;phase='fly';t0=null;place(legs[0],0);}
   function frame(ts){
     if(phase==='wait'){ if(ts<waitUntil){raf=requestAnimationFrame(frame);return;} if(li<legs.length-1){li++;phase='fly';t0=null;} else {idx++;start();} }
@@ -730,12 +735,10 @@ function fly(k,f){
   }
   start(); raf=requestAnimationFrame(frame);
 }
-function redraw(){drawStatic(selI,selF);fly(selI,selF);
-  document.querySelectorAll('.pick button[data-k]').forEach(b=>{b.classList.toggle('on',b.dataset.k===selI);if(selI)b.classList.remove('auto');});
-  document.querySelectorAll('.pick button[data-f]').forEach(b=>{b.classList.toggle('on',b.dataset.f===selF);if(selF)b.classList.remove('auto');});}
-function setI(k){selI=k;redraw();} function setF(f){selF=f;redraw();}
-document.querySelectorAll('.pick button[data-k]').forEach(b=>b.addEventListener('click',()=>setI(b.dataset.k===selI?'':b.dataset.k)));
-document.querySelectorAll('.pick button[data-f]').forEach(b=>b.addEventListener('click',()=>setF(b.dataset.f===selF?'':b.dataset.f)));
+function redraw(){const pr=sel>=0?PAIRS[sel]:['',''];drawStatic(pr[0],pr[1]);fly(pr[0],pr[1]);
+  document.querySelectorAll('.pick button[data-p]').forEach(b=>{b.classList.toggle('on',+b.dataset.p===sel);if(sel>=0)b.classList.remove('auto');});}
+function setP(i){sel=i;redraw();}
+document.querySelectorAll('.pick button[data-p]').forEach(b=>b.addEventListener('click',()=>setP(+b.dataset.p===sel?-1:+b.dataset.p)));
 redraw();
 function measure(){const d=document.querySelector('.draft'),sh=document.querySelector('#island .stophead'),nv=document.querySelector('nav.side');
   const r=document.documentElement.style; r.setProperty('--draftH',d.offsetHeight+'px'); r.setProperty('--optTop',(d.offsetHeight+sh.offsetHeight+2)+'px'); r.setProperty('--navH',(nv.offsetHeight+2)+'px');}
