@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greece 2027 &middot; v3.6 &middot; 260924</title>
+<title>Greece 2027 &middot; v3.7 &middot; 260924</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="description" content="Athens, an island town, and a week of not moving. The family trip plan, one long scroll.">
@@ -342,11 +342,27 @@ main .sub{max-width:var(--measure)}
 /* ---- v33: the map picks a pair, not two halves ---- */
 .pick button i{font-style:normal;font-family:var(--f-m);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin:0 2px}
 .pick button.on i,.pick button.auto i{color:inherit;opacity:.75}
+
+/* ---- v3.7: the food, a thumbnail grid ---- */
+#food .lede{max-width:66ch}
+.fgh{font-size:22px;font-weight:500;margin:34px 0 4px}
+.fgl{color:var(--ink2);margin:0 0 12px;font-size:15.5px}
+.foodgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 16px;margin-top:10px}
+.ft{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ft .fph{display:block;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:var(--bg2)}
+.ft .fph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.ft a.fph:hover img{transform:scale(1.04)}
+.ft figcaption{min-width:0}
+.ft h5{font-size:16px;font-weight:600;margin:0;line-height:1.25}
+.ft .isl{font-family:var(--f-m);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:2px}
+.ft p{font-size:14px;color:var(--ink2);margin:3px 0 0;line-height:1.45}
+@media(max-width:1180px){.foodgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.foodgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.ft h5{font-size:15px}.ft p{font-size:13px}.fgh{font-size:20px}}
 </style>
-<div class="draft"><span class="v" id="v-badge">v3.6</span> <span id="v-stamp">edited 24 Sep 2026 &middot; 09:38 ET</span> · Working draft · private, for the trip party</div>
+<div class="draft"><span class="v" id="v-badge">v3.7</span> <span id="v-stamp">edited 24 Sep 2026 &middot; 12:04</span> · Working draft · private, for the trip party</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
-  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v3.6 &middot; 260924 0938 ET</span></p>
+  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v3.7 &middot; 260924 1204 ET</span></p>
   <a href="#overview">The plan</a>
   <a href="#tassos">What Tassos says</a>
   <a href="#athens" class="nights">Stop 1 · Athens <span class="n">3–4 nights</span></a>
@@ -355,6 +371,7 @@ main .sub{max-width:var(--measure)}
   <a href="#finish" class="nights">Stop 3 · The last week <span class="n">5–6 nights</span></a>
   <a href="#isl-naxos" class="sub">Naxos</a><a href="#isl-kos" class="sub">Kos</a>
   <a href="#compare">Side by side</a>
+  <a href="#food">The food</a>
   <a href="#credits">Credits</a>
   <a href="pairs.html">How the list narrowed &#8599;</a>
   <div class="spacer"></div>
@@ -571,7 +588,7 @@ main .sub{max-width:var(--measure)}
 </section>
 <section id="compare">
   <span class="eyebrow">Side by side</span><h2>Compare</h2>
-  <p class="lede">Stop 2 candidates side by side, in the same words as above. Same words as above. Nothing here is ranked.</p>
+  <p class="lede">Stop 2 candidates side by side, in the same words as above. Nothing here is ranked.</p>
   <p class="tblhint">Wide table &mdash; swipe sideways to see the rest</p>
   <div class="tblwrap"><table class="cmp"><thead><tr><th>Place</th><th>Feel</th><th>Town on foot</th><th>Beach</th><th>Food</th><th>Old stuff</th><th>On the water</th><th>For the kids</th><th>Whole-group base</th><th>Getting on</th></tr></thead><tbody>
 <tr><th scope="row"><a href="#isl-syros">Syros</a></th><td>A working city of 11,000, not a village</td><td>Ermoupoli end to end; Ano Syros up the hill, car-free lanes</td><td>Small, and on the far side: Galissas, Kini, Vari, all by bus</td><td>San Michali cheese, a cafe culture that runs all year, and the widest choice of places to eat of the three</td><td>Neoclassical Ermoupoli, the Apollon (its small 19th-century opera house), medieval Ano Syros</td><td>Boat trips from the harbor; Tinos 15 minutes away</td><td>Strongest here by a distance: a real high street and a square that runs late</td><td>Town apartments, and the only real market in whole houses; it goes early</td><td>Fly from Athens, 35 min on Sky Express, daily except Saturday; Naxos direct, about 1h15</td></tr>
@@ -588,11 +605,156 @@ main .sub{max-width:var(--measure)}
 <tr><th scope="row"><a href="#isl-milos">Milos</a></th><td>Direct ferry, 4 a week</td><td>Via Athens</td></tr>
 <tr><th scope="row"><a href="#isl-kalymnos">Kalymnos</a></th><td>Via Athens</td><td>Direct ferry, about 18 a week</td></tr></tbody></table></div>
 </section>
+<section id="food">
+  <span class="eyebrow">The food</span><h2>What we&rsquo;ll eat</h2>
+  <p class="lede">Sixty-odd things worth ordering, from the plates that arrive first to the ones only one island makes. Tap a picture to see where it came from. The Greek table works best for twelve if you order a lot of starters and salads for everyone and fewer mains.</p>
+<h3 class="fgh">The table</h3><p class="fgl">What arrives first, and what the whole group shares.</p><div class="foodgrid">
+<figure class="ft"><div class="fph"><img src="photos/food/horiatiki.jpg" alt="Horiatiki" width="640" height="640" loading="lazy"></div><figcaption><h5>Horiatiki</h5><p>The village salad: tomato, cucumber, onion, olives and a slab of feta. No lettuce.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.onceuponachef.com/recipes/tzatziki.html" target="_blank" rel="noopener"><img src="photos/food/tzatziki.jpg" alt="Tzatziki" width="640" height="640" loading="lazy"></a><figcaption><h5>Tzatziki</h5><p>Thick yogurt with cucumber and garlic. Goes with everything on the grill.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://thegreekfoodie.com/taramosalata/" target="_blank" rel="noopener"><img src="photos/food/taramosalata.jpg" alt="Taramosalata" width="640" height="640" loading="lazy"></a><figcaption><h5>Taramosalata</h5><p>Fish-roe spread, pink and salty, eaten with bread.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/melitzanosalata-recipe/" target="_blank" rel="noopener"><img src="photos/food/melitzanosalata.jpg" alt="Melitzanosalata" width="640" height="640" loading="lazy"></a><figcaption><h5>Melitzanosalata</h5><p>Smoky mashed eggplant with oil and lemon.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.gimmesomeoven.com/greek-fava/" target="_blank" rel="noopener"><img src="photos/food/fava.jpg" alt="Fava" width="640" height="640" loading="lazy"></a><figcaption><h5>Fava</h5><p>Yellow split peas cooked to a puree, with raw onion and capers on top.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/greek-dolmades-recipe-stuffed-vine-leaves/" target="_blank" rel="noopener"><img src="photos/food/dolmadakia.jpg" alt="Dolmadakia" width="640" height="640" loading="lazy"></a><figcaption><h5>Dolmadakia</h5><p>Vine leaves rolled around rice and herbs, served cool with lemon.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/saganaki-fried-greek-cheese/" target="_blank" rel="noopener"><img src="photos/food/saganaki.jpg" alt="Saganaki" width="640" height="640" loading="lazy"></a><figcaption><h5>Saganaki</h5><p>A slab of cheese fried until it browns. Order one for the table.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/phyllo-baked-feta-with-honey/" target="_blank" rel="noopener"><img src="photos/food/feta_honey.jpg" alt="Feta with honey and sesame" width="640" height="640" loading="lazy"></a><figcaption><h5>Feta with honey and sesame</h5><p>Feta wrapped in phyllo, fried, and covered in honey and sesame.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://commons.wikimedia.org/wiki/File:Spanakopita.jpg" target="_blank" rel="noopener"><img src="photos/food/spanakopita.jpg" alt="Spanakopita and tiropita" width="640" height="640" loading="lazy"></a><figcaption><h5>Spanakopita and tiropita</h5><p>Spinach and feta between sheets of crisp phyllo. Tiropita is the same with cheese only.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/ntakos-rusks-with-tomatoes-and-feta-cheese/" target="_blank" rel="noopener"><img src="photos/food/dakos.jpg" alt="Dakos" width="640" height="640" loading="lazy"></a><figcaption><h5>Dakos</h5><p>A barley rusk softened with grated tomato and topped with soft cheese.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/zucchini-fritters/" target="_blank" rel="noopener"><img src="photos/food/kolokythokeftedes.jpg" alt="Kolokythokeftedes" width="640" height="640" loading="lazy"></a><figcaption><h5>Kolokythokeftedes</h5><p>Zucchini fritters with feta and herbs. The kids&#x27; starter.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/gigantes-plaki-greek-giant-beans/" target="_blank" rel="noopener"><img src="photos/food/gigantes.jpg" alt="Gigantes" width="640" height="640" loading="lazy"></a><figcaption><h5>Gigantes</h5><p>Giant white beans baked slowly in tomato.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://herbsandflour.com/horta-vrasta-greek-boiled-leafy-greens/" target="_blank" rel="noopener"><img src="photos/food/horta.jpg" alt="Horta" width="640" height="640" loading="lazy"></a><figcaption><h5>Horta</h5><p>Boiled greens with lemon and olive oil. On every table, and better than it sounds.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/greek-meatballs-recipe-keftedes-lemon-sauce/" target="_blank" rel="noopener"><img src="photos/food/keftedakia.jpg" alt="Keftedakia" width="640" height="640" loading="lazy"></a><figcaption><h5>Keftedakia</h5><p>Small fried meatballs with herbs, made for sharing.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/greek-sesame-bread-rings-recipe-koulouri-thessalonikis/" target="_blank" rel="noopener"><img src="photos/food/koulouri.jpg" alt="Koulouri" width="640" height="640" loading="lazy"></a><figcaption><h5>Koulouri</h5><p>The sesame bread ring sold on every Athens corner. Breakfast on the walk.</p></figcaption></figure>
+</div>
+<h3 class="fgh">Grill and oven</h3><div class="foodgrid">
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/pork-souvlaki/" target="_blank" rel="noopener"><img src="photos/food/souvlaki.jpg" alt="Souvlaki" width="640" height="640" loading="lazy"></a><figcaption><h5>Souvlaki</h5><p>Pork on a skewer, grilled, with pita and lemon. Everyday food, not tourist food.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://thegreekfoodie.com/homemade-traditional-greek-pork-gyros/" target="_blank" rel="noopener"><img src="photos/food/gyros.jpg" alt="Gyros" width="640" height="640" loading="lazy"></a><figcaption><h5>Gyros</h5><p>Pork shaved off the spit into a pita with tomato, onion, tzatziki and fries inside.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.thehungrybites.com/greek-mini-meat-loaves-with-potatoes/" target="_blank" rel="noopener"><img src="photos/food/bifteki.jpg" alt="Bifteki" width="640" height="640" loading="lazy"></a><figcaption><h5>Bifteki</h5><p>A grilled beef patty, sometimes with cheese in the middle.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://thegreekfoodie.com/greek-lamb-chops-paidakia/" target="_blank" rel="noopener"><img src="photos/food/paidakia.jpg" alt="Paidakia" width="640" height="640" loading="lazy"></a><figcaption><h5>Paidakia</h5><p>Lamb chops grilled hard over charcoal. You eat them with your hands.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/moussaka-recipe-eggplant-casserole/" target="_blank" rel="noopener"><img src="photos/food/moussaka.jpg" alt="Moussaka" width="640" height="640" loading="lazy"></a><figcaption><h5>Moussaka</h5><p>Eggplant, spiced ground meat and a thick layer of bechamel, baked.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/greek-pastitsio-recipe/" target="_blank" rel="noopener"><img src="photos/food/pastitsio.jpg" alt="Pastitsio" width="640" height="640" loading="lazy"></a><figcaption><h5>Pastitsio</h5><p>The baked pasta: tube pasta, spiced meat and bechamel on top.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/kleftiko-greek-lamb-in-parchment/" target="_blank" rel="noopener"><img src="photos/food/kleftiko.jpg" alt="Kleftiko" width="640" height="640" loading="lazy"></a><figcaption><h5>Kleftiko</h5><p>Lamb baked slowly in a parcel with potatoes and lemon until it falls apart.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/greek-stuffed-tomatoes-gemista/" target="_blank" rel="noopener"><img src="photos/food/gemista.jpg" alt="Gemista" width="640" height="640" loading="lazy"></a><figcaption><h5>Gemista</h5><p>Tomatoes and peppers stuffed with rice and herbs and baked.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://cookingorgeous.com/blog/imam-bayildi-turkish-stuffed-eggplant/" target="_blank" rel="noopener"><img src="photos/food/imam.jpg" alt="Imam baildi" width="640" height="640" loading="lazy"></a><figcaption><h5>Imam baildi</h5><p>Eggplant baked soft with a lot of onion, tomato and olive oil.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/stifado-greek-beef-stew/" target="_blank" rel="noopener"><img src="photos/food/stifado.jpg" alt="Stifado" width="640" height="640" loading="lazy"></a><figcaption><h5>Stifado</h5><p>Beef stewed with whole small onions in a spiced tomato sauce.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/youvetsi-greek-lamb-stew/" target="_blank" rel="noopener"><img src="photos/food/youvetsi.jpg" alt="Youvetsi" width="640" height="640" loading="lazy"></a><figcaption><h5>Youvetsi</h5><p>Meat baked with orzo in a clay dish until the pasta soaks up the sauce.</p></figcaption></figure>
+</div>
+<h3 class="fgh">From the sea</h3><div class="foodgrid">
+<figure class="ft"><a class="fph" href="https://www.dianekochilas.com/classic-grilled-octopus-ktapodi-stin-skara/" target="_blank" rel="noopener"><img src="photos/food/octopus.jpg" alt="Grilled octopus" width="640" height="640" loading="lazy"></a><figcaption><h5>Grilled octopus</h5><p>Charred over the grill and dressed with oil and vinegar. The island plate.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/crispy-fried-calamari-recipe-kalamarakia-tiganita/" target="_blank" rel="noopener"><img src="photos/food/calamari.jpg" alt="Fried calamari" width="640" height="640" loading="lazy"></a><figcaption><h5>Fried calamari</h5><p>Squid rings, lightly fried, with lemon. Order for the whole table.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.pexels.com/photo/grilled-fish-with-lemons-and-chives-on-plate-28843593/" target="_blank" rel="noopener"><img src="photos/food/whole_fish.jpg" alt="Whole grilled fish" width="640" height="640" loading="lazy"></a><figcaption><h5>Whole grilled fish</h5><p>Sea bream or sea bass, grilled whole, priced by the kilo. Pick it from the ice.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://realgreekrecipes.com/fried-anchovies/" target="_blank" rel="noopener"><img src="photos/food/marides.jpg" alt="Marides and gavros" width="640" height="640" loading="lazy"></a><figcaption><h5>Marides and gavros</h5><p>Tiny fish fried whole and crisp. You eat the whole thing.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.definitelygreece.com/seafood-in-greece/" target="_blank" rel="noopener"><img src="photos/food/sardines.jpg" alt="Grilled sardines" width="640" height="640" loading="lazy"></a><figcaption><h5>Grilled sardines</h5><p>Grilled, with onion and lemon. Cheap and the best thing on the menu in summer.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.bowlofdelicious.com/greek-shrimp/" target="_blank" rel="noopener"><img src="photos/food/shrimp_saganaki.jpg" alt="Shrimp saganaki" width="640" height="640" loading="lazy"></a><figcaption><h5>Shrimp saganaki</h5><p>Shrimp in tomato sauce with feta melting into it. Bread goes in after.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.dimitrasdishes.com/greek-fishermans-soup-kakavia/" target="_blank" rel="noopener"><img src="photos/food/kakavia.jpg" alt="Kakavia" width="640" height="640" loading="lazy"></a><figcaption><h5>Kakavia</h5><p>The fishermen&#x27;s soup: several kinds of fish with potato, onion and lemon.</p></figcaption></figure>
+</div>
+<h3 class="fgh">Sweets and the afternoon</h3><div class="foodgrid">
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/loukoumades/" target="_blank" rel="noopener"><img src="photos/food/loukoumades.jpg" alt="Loukoumades" width="640" height="640" loading="lazy"></a><figcaption><h5>Loukoumades</h5><p>Small fried dough puffs, hot, drowned in honey with cinnamon.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/how-to-make-baklava/" target="_blank" rel="noopener"><img src="photos/food/baklava.jpg" alt="Baklava" width="640" height="640" loading="lazy"></a><figcaption><h5>Baklava</h5><p>Layers of phyllo and nuts in syrup.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://thescranline.com/galaktoboureko/" target="_blank" rel="noopener"><img src="photos/food/galaktoboureko.jpg" alt="Galaktoboureko" width="640" height="640" loading="lazy"></a><figcaption><h5>Galaktoboureko</h5><p>Semolina custard baked between phyllo and soaked in syrup.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mygreekdish.com/recipe/bougatsa/" target="_blank" rel="noopener"><img src="photos/food/bougatsa.jpg" alt="Bougatsa" width="640" height="640" loading="lazy"></a><figcaption><h5>Bougatsa</h5><p>The breakfast custard pie, dusted with icing sugar and cinnamon.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/portokalopita-greek-orange-cake/" target="_blank" rel="noopener"><img src="photos/food/portokalopita.jpg" alt="Portokalopita" width="640" height="640" loading="lazy"></a><figcaption><h5>Portokalopita</h5><p>Orange cake made with shredded phyllo, very moist, served in squares.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.thehungrybites.com/greek-yogurt-honey/" target="_blank" rel="noopener"><img src="photos/food/yogurt_honey.jpg" alt="Yogurt with honey and walnuts" width="640" height="640" loading="lazy"></a><figcaption><h5>Yogurt with honey and walnuts</h5><p>Greek yogurt with honey and walnuts. Breakfast or dessert.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://realgreekrecipes.com/kaimaki-ice-cream/" target="_blank" rel="noopener"><img src="photos/food/kaimaki.jpg" alt="Kaimaki ice cream" width="640" height="640" loading="lazy"></a><figcaption><h5>Kaimaki ice cream</h5><p>Chewy ice cream made with mastic, often with sour cherry on top.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.bakedambrosia.com/amygdalota/" target="_blank" rel="noopener"><img src="photos/food/amygdalota.jpg" alt="Amygdalota" width="640" height="640" loading="lazy"></a><figcaption><h5>Amygdalota</h5><p>Soft almond sweets, an island specialty, sometimes with rosewater.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/freddo-espress/" target="_blank" rel="noopener"><img src="photos/food/freddo.jpg" alt="Freddo espresso" width="640" height="640" loading="lazy"></a><figcaption><h5>Freddo espresso</h5><p>Iced espresso shaken to a foam. What every Greek under 40 is drinking.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/watermelon-salad-with-cucumber-feta/" target="_blank" rel="noopener"><img src="photos/food/watermelon_feta.jpg" alt="Watermelon and feta" width="640" height="640" loading="lazy"></a><figcaption><h5>Watermelon and feta</h5><p>Watermelon with feta and mint. The summer salad.</p></figcaption></figure>
+</div>
+<h3 class="fgh">Drinks</h3><div class="foodgrid">
+<figure class="ft"><a class="fph" href="https://www.themediterraneandish.com/ouzo-drink/" target="_blank" rel="noopener"><img src="photos/food/ouzo.jpg" alt="Ouzo" width="640" height="640" loading="lazy"></a><figcaption><h5>Ouzo</h5><p>Anise spirit. Add water and it turns cloudy. Sipped slowly with small plates.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://unsplash.com/s/photos/assyrtiko" target="_blank" rel="noopener"><img src="photos/food/assyrtiko.jpg" alt="Assyrtiko" width="640" height="640" loading="lazy"></a><figcaption><h5>Assyrtiko</h5><p>The island white: dry, sharp, mineral. Grown on Santorini.</p></figcaption></figure>
+</div>
+<h3 class="fgh">The islands’ own</h3><p class="fgl">Made on one island, or on the group of islands around it.</p><div class="foodgrid">
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/item/loukoumi-syros/" target="_blank" rel="noopener"><img src="photos/food/syros_loukoumi.jpg" alt="Syros loukoumi" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Syros</span><h5>Syros loukoumi</h5><p>The soft jellied sweet the island is known for, flavored with rose or mastic and dusted in sugar.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://visitsifnos.net/cuisine/halvadopita/" target="_blank" rel="noopener"><img src="photos/food/halvadopita.jpg" alt="Halvadopita" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Syros</span><h5>Halvadopita</h5><p>Nougat with almonds pressed between two thin wafers. The other Syros sweet.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://cookout.skai.gr/articles/to-san-mixali-einai-to-pop-tyri-tis-syrou" target="_blank" rel="noopener"><img src="photos/food/san_michali.jpg" alt="San Michali cheese" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Syros</span><h5>San Michali cheese</h5><p>The island&#x27;s hard, sharp cow&#x27;s-milk cheese, protected by name.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.mirandeli.com/post/%CE%BB%CE%BF%CF%8D%CE%B6%CE%B1-%CE%BC%CF%85%CE%BA%CF%8C%CE%BD%CE%BF%CF%85" target="_blank" rel="noopener"><img src="photos/food/louza.jpg" alt="Louza" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Cyclades</span><h5>Louza</h5><p>Air-dried pork loin sliced thin, the Cyclades&#x27; own cured meat.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.thehungrybites.com/greek-traditional-baked-chickpeas-revithada/" target="_blank" rel="noopener"><img src="photos/food/revithada.jpg" alt="Revithada" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Cyclades</span><h5>Revithada</h5><p>Chickpeas baked overnight in a sealed clay pot with onion and olive oil.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://akispetretzikis.com/recipe/4286/pitarakia-ths-mhloy" target="_blank" rel="noopener"><img src="photos/food/pitarakia.jpg" alt="Pitarakia" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Milos</span><h5>Pitarakia</h5><p>Small fried cheese pies, the thing you snack on all week.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.notospress.gr/peloponnisos/story/86501/sfela-to-paradosiako-tyri-tis-fotias-tis-notias-peloponnisoy" target="_blank" rel="noopener"><img src="photos/food/sfela.jpg" alt="Sfela cheese" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Milos</span><h5>Sfela cheese</h5><p>The island&#x27;s salty white cheese, in slabs.</p></figcaption></figure>
+<figure class="ft"><div class="fph"><img src="photos/food/mermizeli.jpg" alt="Mermizeli" width="640" height="640" loading="lazy"></div><figcaption><span class="isl">Kalymnos</span><h5>Mermizeli</h5><p>Barley rusk with tomato, caper leaves and a sharp soft cheese. The Kalymnos salad.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/kalymnos-gefseis-topou-2/" target="_blank" rel="noopener"><img src="photos/food/mouri.jpg" alt="Mouri" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Kalymnos</span><h5>Mouri</h5><p>A whole lamb stuffed with rice and liver, sealed in a clay pot and cooked in a wood oven.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/kalymnos/paradosiaki-kouzina/" target="_blank" rel="noopener"><img src="photos/food/filla.jpg" alt="Filla" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Kalymnos</span><h5>Filla</h5><p>The Kalymnos stuffed vine leaves, folded into small pentagons, with meat and rice.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/item/spinialo-fouskas-kalymnos/" target="_blank" rel="noopener"><img src="photos/food/spinialos.jpg" alt="Spinialos" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Kalymnos</span><h5>Spinialos</h5><p>Sea squirts marinated in seawater, the sponge divers&#x27; plate. The dare.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://unsplash.com/photos/a-honey-dripping-from-a-spoon-onto-a-honeycomb-pNgMLnNRFiA" target="_blank" rel="noopener"><img src="photos/food/thyme_honey.jpg" alt="Thyme honey" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Kalymnos</span><h5>Thyme honey</h5><p>From hives on the rocky hills. Buy it from a producer&#x27;s yard, not a shop.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/item/graviera-naxos/" target="_blank" rel="noopener"><img src="photos/food/graviera.jpg" alt="Graviera and arseniko Naxou" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Graviera and arseniko Naxou</h5><p>Graviera is the mild cow&#x27;s-milk cheese; arseniko is the sharper sheep-and-goat one. Both protected by name.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://easnaxos.com/%CF%84%CE%B7%CE%B3%CE%B1%CE%BD%CE%B7%CF%84%CE%AD%CF%82-%CF%80%CE%B1%CF%84%CE%AC%CF%84%CE%B5%CF%82-mamapeinao-gr/" target="_blank" rel="noopener"><img src="photos/food/naxos_potatoes.jpg" alt="Naxos potatoes" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Naxos potatoes</h5><p>The island&#x27;s potatoes have their own EU protection. Order them plain, fried or roasted.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.dianekochilas.com/kalogeros-beef-baked-with-eggplants-cheese/" target="_blank" rel="noopener"><img src="photos/food/kalogeros.jpg" alt="Kalogeros" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Kalogeros</h5><p>Veal and eggplant baked under a cap of melted graviera. The dish most tied to the island.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.flash.gr/syntagi-gia-choirino-rosto-naxoy-me-patates-ston-foyrno-1001628" target="_blank" rel="noopener"><img src="photos/food/rosto.jpg" alt="Rosto" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Rosto</h5><p>Pork cooked slowly in red wine and tomato, with the island potatoes.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://cantina.protothema.gr/recipe/melachrini-naxou-i-pio-lachtaristi-siropiasti-karydopita/" target="_blank" rel="noopener"><img src="photos/food/melachrino.jpg" alt="Melachrino" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Melachrino</h5><p>Walnut cake soaked in kitron syrup, served with kaimaki.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/item/potopoieio-vallindra-naxos/" target="_blank" rel="noopener"><img src="photos/food/kitron.jpg" alt="Kitron" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Naxos</span><h5>Kitron</h5><p>The liqueur made from the leaves of the citron tree, which only grows here. Vallindras in Halki still makes it.</p></figcaption></figure>
+<figure class="ft"><a class="fph" href="https://www.greekgastronomyguide.gr/item/tyri-tis-posias-krasotyri-kos/" target="_blank" rel="noopener"><img src="photos/food/posa.jpg" alt="Posa cheese" width="640" height="640" loading="lazy"></a><figcaption><span class="isl">Kos</span><h5>Posa cheese</h5><p>The Kos cheese, aged in the lees left from making red wine.</p></figcaption></figure>
+</div>
+</section>
 <section id="credits" class="src">
   <span class="eyebrow">Credits</span><h2>Photos and maps</h2>
-  <p class="lede">Most photos are from Wikimedia Commons under open licenses and are credited below. Twenty-eight are not: stock and travel-site pictures, plus a few press and business images. They are here so the four families can see the places properly, on a page that is unlisted and marked no-index. If any of this ever goes further than the group, those twenty-eight come out or get bought. One photograph, the salad at Papaioannou, is Josh’s own. Island outlines from OpenStreetMap contributors.</p>
+  <p class="lede">Most of the place photos are from Wikimedia Commons under open licenses and are credited below. Twenty-eight of those, and nearly all of the food photos, are not: stock, travel-site and recipe-site pictures, plus a few press and business images. They are here so the four families can see the places properly, on a page that is unlisted and marked no-index. If any of this ever goes further than the group, those twenty-eight come out or get bought. One photograph, the salad at Papaioannou, is Josh’s own. Island outlines from OpenStreetMap contributors.</p>
   <details><summary>Photo credits</summary><ul>
 <li><b>Added 23 and 24 September 2026, not openly licensed.</b> Source noted; used privately for the trip party only.</li>
+<li><b>The food section, added 24 September 2026:</b> photos from the recipe and food sites linked on each tile, not openly licensed, used privately for the trip party only.</li>
+<li>food/horiatiki: Horiatiki &mdash; Josh, at Papaioannou Vouliagmeni</li>
+<li>food/tzatziki: Tzatziki &mdash; Once Upon a Chef</li>
+<li>food/taramosalata: Taramosalata &mdash; The Greek Foodie</li>
+<li>food/melitzanosalata: Melitzanosalata &mdash; The Mediterranean Dish</li>
+<li>food/fava: Fava &mdash; Gimme Some Oven</li>
+<li>food/dolmadakia: Dolmadakia &mdash; My Greek Dish</li>
+<li>food/saganaki: Saganaki &mdash; The Mediterranean Dish</li>
+<li>food/feta_honey: Feta with honey and sesame &mdash; The Mediterranean Dish</li>
+<li>food/spanakopita: Spanakopita and tiropita &mdash; Wikimedia Commons</li>
+<li>food/dakos: Dakos &mdash; My Greek Dish</li>
+<li>food/kolokythokeftedes: Kolokythokeftedes &mdash; The Mediterranean Dish</li>
+<li>food/gigantes: Gigantes &mdash; The Mediterranean Dish</li>
+<li>food/horta: Horta &mdash; Herbs &amp; Flour</li>
+<li>food/keftedakia: Keftedakia &mdash; The Mediterranean Dish</li>
+<li>food/koulouri: Koulouri &mdash; My Greek Dish</li>
+<li>food/souvlaki: Souvlaki &mdash; The Mediterranean Dish</li>
+<li>food/gyros: Gyros &mdash; The Greek Foodie</li>
+<li>food/bifteki: Bifteki &mdash; The Hungry Bites</li>
+<li>food/paidakia: Paidakia &mdash; The Greek Foodie</li>
+<li>food/moussaka: Moussaka &mdash; The Mediterranean Dish</li>
+<li>food/pastitsio: Pastitsio &mdash; The Mediterranean Dish</li>
+<li>food/kleftiko: Kleftiko &mdash; The Mediterranean Dish</li>
+<li>food/gemista: Gemista &mdash; The Mediterranean Dish</li>
+<li>food/imam: Imam baildi &mdash; Cooking Gorgeous</li>
+<li>food/stifado: Stifado &mdash; The Mediterranean Dish</li>
+<li>food/youvetsi: Youvetsi &mdash; The Mediterranean Dish</li>
+<li>food/octopus: Grilled octopus &mdash; Diane Kochilas</li>
+<li>food/calamari: Fried calamari &mdash; My Greek Dish</li>
+<li>food/whole_fish: Whole grilled fish &mdash; Elsa Silva / Pexels</li>
+<li>food/marides: Marides and gavros &mdash; Real Greek Recipes</li>
+<li>food/sardines: Grilled sardines &mdash; Definitely Greece</li>
+<li>food/shrimp_saganaki: Shrimp saganaki &mdash; Bowl of Delicious</li>
+<li>food/kakavia: Kakavia &mdash; Dimitra&#x27;s Dishes</li>
+<li>food/loukoumades: Loukoumades &mdash; My Greek Dish</li>
+<li>food/baklava: Baklava &mdash; The Mediterranean Dish</li>
+<li>food/galaktoboureko: Galaktoboureko &mdash; The Scranline</li>
+<li>food/bougatsa: Bougatsa &mdash; My Greek Dish</li>
+<li>food/portokalopita: Portokalopita &mdash; The Mediterranean Dish</li>
+<li>food/yogurt_honey: Yogurt with honey and walnuts &mdash; The Hungry Bites</li>
+<li>food/kaimaki: Kaimaki ice cream &mdash; Real Greek Recipes</li>
+<li>food/amygdalota: Amygdalota &mdash; Baked Ambrosia</li>
+<li>food/freddo: Freddo espresso &mdash; The Mediterranean Dish</li>
+<li>food/watermelon_feta: Watermelon and feta &mdash; The Mediterranean Dish</li>
+<li>food/ouzo: Ouzo &mdash; The Mediterranean Dish</li>
+<li>food/assyrtiko: Assyrtiko &mdash; Unsplash / Alexandra Torro</li>
+<li>food/syros_loukoumi: Syros loukoumi &mdash; Greek Gastronomy Guide</li>
+<li>food/halvadopita: Halvadopita &mdash; Visit Sifnos</li>
+<li>food/san_michali: San Michali cheese &mdash; Cookout / Skai</li>
+<li>food/louza: Louza &mdash; MiranDeli</li>
+<li>food/revithada: Revithada &mdash; The Hungry Bites</li>
+<li>food/pitarakia: Pitarakia &mdash; Akis Petretzikis</li>
+<li>food/sfela: Sfela cheese &mdash; Notospress.gr</li>
+<li>food/mermizeli: Mermizeli &mdash; Drosos Vlamos &middot; From Kalymnos With Love</li>
+<li>food/mouri: Mouri &mdash; Greek Gastronomy Guide</li>
+<li>food/filla: Filla &mdash; Greek Gastronomy Guide</li>
+<li>food/spinialos: Spinialos &mdash; Greek Gastronomy Guide</li>
+<li>food/thyme_honey: Thyme honey &mdash; Micke Lindström / Unsplash</li>
+<li>food/graviera: Graviera and arseniko Naxou &mdash; Greek Gastronomy Guide</li>
+<li>food/naxos_potatoes: Naxos potatoes &mdash; E.A.S. Naxos</li>
+<li>food/kalogeros: Kalogeros &mdash; Diane Kochilas</li>
+<li>food/rosto: Rosto &mdash; Flash.gr</li>
+<li>food/melachrino: Melachrino &mdash; Funky Cook / Protothema Cantina</li>
+<li>food/kitron: Kitron &mdash; Greek Gastronomy Guide</li>
+<li>food/posa: Posa cheese &mdash; Greek Gastronomy Guide</li>
 <li>syros_hero_new: Ermoupoli at sunset from the water &mdash; Shutterstock 1350427844</li>
 <li>syros_kini: taverna tables at the water&#x27;s edge &mdash; travel photography, source unrecorded</li>
 <li>syros_beach: organized village beach with sunbeds &mdash; travel photography, source unrecorded</li>
