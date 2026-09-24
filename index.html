@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greece 2027 &middot; v30 &middot; 260925</title>
+<title>Greece 2027 &middot; v31 &middot; 260925</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="description" content="Athens, an island town, and a week of not moving. The family trip plan, one long scroll.">
@@ -324,11 +324,25 @@ main .sub{max-width:var(--measure)}
 .relmap.zoom .rm-link{stroke-width:1.5}
 .relmap.zoom .rm-dot,.relmap.zoom .rm-fin,.relmap.zoom .rm-ath{stroke-width:1}
 .relmap figcaption b{color:var(--ink2);font-weight:600}
+
+/* ---- v31: the locked pairs, stated up front ---- */
+.pairnote{margin:18px 0 0;padding:16px 20px 14px;background:var(--bg2);border-left:3px solid var(--route);border-radius:0 10px 10px 0}
+.pairlede{margin:0;font-size:16px;line-height:1.55;color:var(--ink2)}
+.pairlede b{color:var(--ink)}
+.pairlist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.pairlist li{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;background:var(--chip);border:1px solid var(--rule);border-radius:99px;padding:7px 16px}
+.pairlist .pa,.pairlist .pb{font-family:var(--f-d);font-size:19px;font-weight:600;color:var(--ink);line-height:1.2}
+.pairlist .pj{font-family:var(--f-m);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.pairlist .pw{font-family:var(--f-m);font-size:11.5px;letter-spacing:.04em;color:var(--route-ink);margin-left:auto;white-space:nowrap}
+.pairfoot{margin:12px 0 0;font-size:14.5px;line-height:1.55;color:var(--mute)}
+@media(max-width:640px){.pairlist .pw{margin-left:0;width:100%;white-space:normal;line-height:1.45}
+ .pairlist li{border-radius:12px;padding:10px 14px}
+ .pairlist .pa,.pairlist .pb{font-size:18px}}
 </style>
-<div class="draft"><span class="v" id="v-badge">v30</span> <span id="v-stamp">edited 25 Sep 2026 &middot; 02:05 ET</span> · Working draft · private, for the trip party</div>
+<div class="draft"><span class="v" id="v-badge">v31</span> <span id="v-stamp">edited 25 Sep 2026 &middot; 02:35 ET</span> · Working draft · private, for the trip party</div>
 <div class="wrap">
 <nav class="side" aria-label="Sections">
-  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v30 &middot; 260925 0205 ET</span></p>
+  <p class="brand">Greece 2027<small>City · island town · last week</small><span class="ver" id="v-nav">v31 &middot; 260925 0235 ET</span></p>
   <a href="#overview">The plan</a>
   <a href="#tassos">What Tassos says</a>
   <a href="#athens" class="nights">Stop 1 · Athens <span class="n">3–4 nights</span></a>
@@ -347,7 +361,16 @@ main .sub{max-width:var(--measure)}
   <div class="hero"><img src="photos/ath_lycabettus.jpg" alt="Athens at dusk from the top of Lycabettus hill: the lit Acropolis on its rock, the city spread out to the sea, a violet and orange sky" width="1600" height="1067" fetchpriority="high"><span class="cr">Panos Zoulakis · Wikimedia Commons</span>
     <div class="over"><span class="eyebrow">Late June into early July 2027 · about two weeks · three stops</span><h1>Greece, three stops</h1>
     <p>A city, a real Greek island town, and a week of not moving. Three places over about two weeks, so nobody is packing every other day, with boat days for whoever wants them and a beach or a town for whoever doesn&#x27;t.</p></div></div>
-  <div class="plan"><div class="stop"><span class="nn">Stop 1</span><span class="kind">The city</span><span class="nm">Athens</span> <span class="nights">3–4 nights</span><p>The Acropolis, the rooftops, the food markets, dinner at nine. Arrive off the overnight flight and lose the jet lag somewhere worth losing it.</p></div><div class="stop"><span class="nn">Stop 2</span><span class="kind">The real Greece</span><span class="nm">One island town, still to choose</span> <span class="nights">3–5 nights</span><p>A working island with an actual town: restaurants, a bakery, a harbor with fishing boats, all on foot. Enough visitors that a big American group is normal, few enough that a coffee still costs what a coffee costs. Good beaches nearby, not the whole point.</p></div><div class="stop"><span class="nn">Stop 3</span><span class="kind">The last week</span><span class="nm">Naxos or Kos</span> <span class="nights">5–6 nights</span><p>Somewhere to stop moving. One address that takes the whole group, with great views, a great pool, easy sea access and good food on site. A town at the door is a bonus, not a requirement; boats and day trips leaving from nearby are.</p></div></div>
+  <div class="plan"><div class="stop"><span class="nn">Stop 1</span><span class="kind">The city</span><span class="nm">Athens</span> <span class="nights">3–4 nights</span><p>The Acropolis, the rooftops, the food markets, dinner at nine. Arrive off the overnight flight and lose the jet lag somewhere worth losing it.</p></div><div class="stop"><span class="nn">Stop 2</span><span class="kind">The real Greece</span><span class="nm">One island town, still to choose</span> <span class="nights">3–5 nights</span><p>A working island with an actual town: restaurants, a bakery, a harbor with fishing boats, all on foot. Enough visitors that a big American group is normal, few enough that a coffee still costs what a coffee costs. Good beaches nearby, not the whole point.</p></div><div class="stop"><span class="nn">Stop 3</span><span class="kind">The last week</span><span class="nm">Naxos or Kos, set by the island before it</span> <span class="nights">5–6 nights</span><p>Somewhere to stop moving. One address that takes the whole group, with great views, a great pool, easy sea access and good food on site. A town at the door is a bonus, not a requirement; boats and day trips leaving from nearby are.</p></div></div>
+  <div class="pairnote">
+    <p class="pairlede"><b>Stop 2 and stop 3 come as a set.</b> The boats only make three combinations work. Pick the island and you have picked the last week with it.</p>
+    <ol class="pairlist">
+      <li><span class="pa">Syros</span><span class="pj">then</span><span class="pb">Naxos</span><span class="pw">one ferry, seven a week</span></li>
+      <li><span class="pa">Milos</span><span class="pj">then</span><span class="pb">Naxos</span><span class="pw">one ferry, four a week</span></li>
+      <li><span class="pa">Kalymnos</span><span class="pj">then</span><span class="pb">Kos</span><span class="pw">half an hour by boat, about eighteen a week</span></li>
+    </ol>
+    <p class="pairfoot">Every other combination, Milos with Kos for instance, means sailing back to Athens and changing there, which eats most of a day out of two weeks.</p>
+  </div>
   <div class="mapwrap"><svg id="map" viewBox="0 0 1000 760" role="img" aria-label="Map of Greece showing Athens, the three candidate islands for the middle week, and the two candidates for the third stop">
 <defs><symbol id="plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
 <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>
@@ -556,7 +579,7 @@ main .sub{max-width:var(--measure)}
   <div class="tblwrap"><table class="cmp"><thead><tr><th>Place</th><th>Feel</th><th>Where twelve people stay</th><th>Old stuff</th><th>On the water</th><th>For the kids</th><th>From the island</th><th>Home</th></tr></thead><tbody>
 <tr><th scope="row"><a href="#isl-naxos">Naxos</a></th><td>An island town with the beach in front of it; the one that does not need a resort</td><td>The main town, called the Chora, as it is on every Greek island: castle quarter, market, waterfront, and the widest choice of places to stay of anywhere on this list</td><td>The old marble doorway, the Venetian castle quarter, the giant unfinished statues lying in their quarries, Apeiranthos and the mountain villages</td><td>Long shallow sand all down the west coast; windsurfing at Mikri Vigla; boat trips to the Koufonisia and the other small islands east</td><td>Second only to Syros: a real high street, and a beach a quarter of a mile from the middle</td><td>Direct ferry from Syros 7 a week and Milos 4; Kalymnos goes via Athens</td><td>Nonstop to Athens, then the Newark flight</td></tr>
 <tr><th scope="row"><a href="#isl-kos">Kos</a></th><td>Resort island with a quiet Kefalos end</td><td>Ikos Aria (all-inclusive, family suites, kids&#x27; club and teens&#x27; program, spa, village on foot); Tigaki resorts; villas that take the whole party</td><td>The Asklepieion healing sanctuary; a Roman odeon (a small theater); Neratzia castle</td><td>No-license boats and skippered days from Kos harbor</td><td>Two water parks; Kardamena watersports; car-free harbor front</td><td>About 18 ferries a week from Kalymnos, 30 to 45 min</td><td>Via Athens, several flights a day</td></tr></tbody></table></div>
-  <p class="lede" style="margin-top:34px">How each island reaches each third stop, in one table. The map above shows one route at a time; this is the same thing flat.</p>
+  <p class="lede" style="margin-top:34px">How each island reaches each third stop, in one table. Via Athens means a change and most of a day, which is why the page carries three pairings and not six.</p>
   <div class="tblwrap"><table class="cmp narrow"><thead><tr><th>Place</th><th>To Naxos</th><th>To Kos</th></tr></thead><tbody>
 <tr><th scope="row"><a href="#isl-syros">Syros</a></th><td>Direct ferry, 7 a week</td><td>Via Athens</td></tr>
 <tr><th scope="row"><a href="#isl-milos">Milos</a></th><td>Direct ferry, 4 a week</td><td>Via Athens</td></tr>
